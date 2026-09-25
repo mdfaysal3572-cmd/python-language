@@ -1,0 +1,14 @@
+student information using csv
+import csv
+with open("students.csv", "w", newline ="") as file:
+    write = csv.writer(file)
+    write.writerow(["Name", "age", "Department"])
+    write.writerow(["Forhad", 21, "Physics"])
+    write.writerow(["Reyaz", 12, "Math"])
+    write.writerow(["Hakim", 27, "Mathematics"])
+    write.writerow(["Muanzara", 26, "Physics"])
+print("....Students information>....")
+with open("students.csv", "r") as file:
+    reader = csv.reader(file)
+    for row in reader:
+        print(row)
