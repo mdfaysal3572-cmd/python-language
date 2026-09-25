@@ -1,0 +1,31 @@
+import csv
+
+# Create a csv file
+with open("students.csv", "w", newline="") as file:
+    write = csv.writer(file)
+    write.writerow(["Name", "Age", "Department"])
+    write.writerow(["Foysal", 22, "CSE"])
+    write.writerow(["Rifat", 22, "EEE"])
+#Read the CSV file
+print("...students information ...")
+with open("students.csv", "r") as file:
+    reader = csv.reader(file)
+    for row in reader:
+        print(row)
+
+
+#search for student information 
+search_name = input("\nEnter student name:")
+with open("students.csv", "r") as file:
+    reader = csv.DictReader(file)
+    found = False
+    for row in reader:
+        if row["Name"].lower() == search_name.lower():
+            print("\nstudent found")
+            print("Name:", row["Name"])
+            print("Age:", row["Age"])
+            print("Department:", row["Department"])
+            found = True
+
+    if not found:
+        print("\nstudent not found")
