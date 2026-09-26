@@ -1,0 +1,47 @@
+#Student information 
+name = input("Enter student name:")
+physics = float(input("Enter physics marks:"))
+math = float(input("Enter math marks:"))
+english = float(input("Enter English marks:"))
+
+
+#calculate the total and average marks
+
+total = physics + math + english
+average = total / 3
+
+#Determine gtade
+if average >= 80:
+    grade = "A+"
+elif average >= 70:
+    grade = "A"
+elif average >= 60:
+    grade = "A-"
+elif average >= 50:
+    grade = "B"
+elif average >= 40:
+    grade = "C"
+
+elif average >= 33:
+    grade = "D"
+else:
+    grade = "F"
+
+
+#Dertermine to Pass or fail
+if physics >= 33 and math >= 33 and english >= 33 and average >= 33:
+    result = "pass"
+else:
+    result = "Fail"
+
+#Display the Student result and average
+
+print("... Student information ....")
+print("Name:", name)
+print("Physics:", physics)
+print("Math:", math)
+print("English:", english)
+print("Total Marks:", total)
+print("Average Marks:", average)
+print("Grade:", grade)
+print("Result:", result)
