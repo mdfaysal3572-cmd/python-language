@@ -1,0 +1,11 @@
+import openpyxl
+workbook = openpyxl.Workbook()
+sheet = workbook.active
+sheet["A1"] = "Name"
+sheet["B1"] = "Age"
+sheet["C1"] = "Department"
+sheet["A2"] = "Foysal"
+sheet["B2"] = 22
+sheet["C2"] = "Physics"
+workbook.save("students.xlsx")
+print("Excel file created")
