@@ -1,3 +1,6 @@
+#Created the Excel file 
+
+
 import openpyxl
 workbook = openpyxl.Workbook()
 sheet = workbook.active
@@ -7,5 +10,20 @@ sheet["C1"] = "Department"
 sheet["A2"] = "Foysal"
 sheet["B2"] = 22
 sheet["C2"] = "Physics"
-workbook.save("students.xlsx")
+sheet["A3"] = "Forhad"
+sheet["B3"] = 21
+sheet["C3"] = "Mathematics"
+workbook.save("student.xlsx")
 print("Excel file created")
+
+
+#read the Excel file
+import openpyxl
+workbook = openpyxl.load_workbook("student.xlsx")
+sheet = workbook.active
+print(sheet["A1"].value)
+print(sheet["A2"].value)
+print(sheet["A3"].value)
+
+
+
