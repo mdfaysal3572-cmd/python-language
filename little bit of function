@@ -1,0 +1,75 @@
+
+#function to calcaulate the average of three numbers
+def avg():
+    a = int(input("Enter first numbera:"))
+    b = int(input("Enter second number:"))
+    c = int(input("Enter third number:"))
+    average = (a + b + c) / 3
+    print("The average of the three numbers is:", average)
+
+avg()
+avg()
+avg()
+avg()
+avg()
+
+
+def goodbye(name, endging):
+    print("Good bye", name)
+    print(endging)
+goodbye("Foysal", "see you latter")
+
+
+def goodbye(name, endging = "thank you so much"):
+    print("Good Bye", name)
+    print(endging)
+goodbye("Foyssl")
+goodbye("Forhad", "see you later")
+goodbye("Hakim")
+
+
+list = [1, 2, 3, 4, 5]
+square = []
+for i in list:
+    square.append(i ** 2)
+print(square)
+
+
+def square(x):
+    return x * x
+print(square(4))
+
+def add(x, y):
+    return x + y
+print(add(10, 20))
+
+
+#function calling other function
+def square(x):
+    return x * x
+def calculate(x):
+    return square(x) + 10
+print(calculate(5))
+
+
+#one add function and calling the multiply function
+def add(x, y):
+    return x + y
+def multiply(a, b):
+    return a * b
+def calculate(x, y, z):
+    result = add(x, y)
+    result = multiply(result, z)
+    return result
+print(calculate(5, 10, 2))
+n = int(input("Enter a integer number:"))
+for i in range(1, 11):
+    print(f"{n} * {i} = {n * i}")
+    
+
+
+
+
+
+
+
