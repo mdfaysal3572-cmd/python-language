@@ -1,0 +1,73 @@
+def add(a, b):
+    return a + b
+def square(x, y):
+    return x * y
+def calculate(a, b, y):
+    result = add(a, b)
+    result = square(result, y)
+
+    return result
+print(calculate(5, 10, 2))
+
+
+#normal function
+def square(x):
+    return x * x
+print(square(5))
+
+#for lambda function 
+square = lambda x: x * x
+print(square(6))
+
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+result = []
+result1 =[]
+for i in numbers:
+    result.append(i * 2)
+print(result)
+for i in numbers:
+    result1.append(i * i)
+print(result1)
+
+
+
+numbers = [1, 2, 3, 4, 5,]
+result = list(map(lambda x: x * 2, numbers))
+print(result)
+result1 = list(filter(lambda x: x > 2, numbers))
+print(result1)
+
+name = ["Foysal", "Rana", "Sakib", "Forhad"]
+name1 = list(filter(lambda x: x.startswith("F"), name))
+
+print(name1)
+
+students = [
+    ("Foysal", 60),
+    ("Forhad", 95),
+    ("Rana", 80),
+    ("Sakib", 90),
+    ("Shakil", 70),
+    ("Rasel", 50)
+]
+s = sorted(students, key = lambda students: students[1], reverse = True)
+print(s)
+print(type(students))
+
+
+#sorted() with dictionary
+students = [
+    {"name": "Foysal", "marks": 69}, 
+    {"name": "Rana", "marks": 80}, 
+    {"name": "Sakib", "marks": 90}, 
+    {"name": "Forhad", "marks": 95}, 
+    {"name": "Shakil", "marks": 70}, 
+    {"name": "Rasel", "marks": 50}
+]
+result = sorted(students, key = lambda students: students["marks"])
+print(result)
+result1 = list(filter(lambda students: students["marks"] > 50, students))
+print(result1)
+for students in result1:
+    print(f"name: {students["name"]}, marks: {students["marks"]}")
+
