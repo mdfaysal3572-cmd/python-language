@@ -40,6 +40,38 @@ print("... Student information ....")
 print("Name:", name)
 print("Physics:", physics)
 print("Math:", math)
+
+
+
+#for the function the student result analyzer and show the result
+
+def calculate_total(Physics, Chemistry, mathematics):
+    return Physics + Chemistry + mathematics
+def calculate_average(total):
+    return (total / 3)
+def calculate_grade(average):
+    if average >= 80:
+        return "A+"
+    elif average >= 70:
+        return "A"
+    elif average >= 60:
+        return "B"
+    elif average >= 50:
+        return "C"
+    else:
+        return "F"
+
+name = input("Enter the student name:")
+physics = float(input("Enter the marks of physics:"))
+chemistry = float(input("Enter the marks of chemistry:"))
+mathematics = float(input("Enter the marks of mathematics:"))
+total = calculate_total(physics, chemistry, mathematics)
+average = calculate_average(total)
+grade = calculate_grade(average)
+print("student name:", name)
+print("Total marks:", total)
+print("Average marks:", average)    
+print("Grade:", grade)
 print("English:", english)
 print("Total Marks:", total)
 print("Average Marks:", average)
