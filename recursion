@@ -1,0 +1,66 @@
+"""
+n = 1
+n = 1 + 2
+n = 1 + 2 + 3
+n = 1 + 2 + 3 + 4
+n = 1 + 2 + 3 + 4 + 5 .....+(n- 1) + n
+
+
+"""
+def sum(n):
+    if n == 1:
+        return 1
+    return sum(n - 1) + n
+   
+
+print(sum(4))
+
+"""
+1! = 1
+2! = 2 * 1
+3! = 3 * 2*1
+4! = 4 * 3 * 2 * 1
+n! = n * n-1 * n-2 *.....* 1
+"""
+def factorial(n):
+    if n == 1:
+        return 1
+    return factorial(n - 1) * n
+
+print(factorial(5))
+
+def pattern(n):
+    if n == 0:
+        return
+    
+    print("*" * n)
+    pattern(n - 1)
+print(pattern(6))
+# inch to cms:
+def inch_to_cms(inch):
+    return inch * 2.54
+n = int(input("Enter your inch number:"))
+print(f"the corsspending value in cms is {inch_to_cms(n)}")
+
+#remove from the function and stip
+def rem(l, word):
+    n = []
+    for x in l:
+        if not(x == word):
+            n.append(x.strip(word)) # ?
+    return n
+
+l = ["Foysal", "Forhad", "an"]
+print(rem(l, "an"))        
+
+
+
+
+
+
+
+
+
+
+
+
