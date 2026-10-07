@@ -1,0 +1,31 @@
+def add(a, b):
+    return a + b
+def subtract(a, b):
+    return a - b
+def multiply(a, b):
+    return a * b
+def divide(a, b):
+    if b == 0:
+        return "Cannot divided into the zero"
+    return a / b
+print("simple create the calculator")
+print("1. add")
+print("2.subtract")
+print("3. multiply")
+print("4. divide")
+
+choice = input("choice the number(1 - 4): ")
+num1 = float(input("Enter the first number:"))
+num2 = float(input("Enter the second number:"))
+if choice == "1":
+    print("add those two numbers:", add(num1, num2))
+elif choice == "2":
+    print("subtract those two numbers:", subtract(num1, num2))
+elif choice == "3":
+    print("multiply those two numbers:", multiply(num1, num2))
+elif choice == "4":
+    print("a is diveded by b:", divide(num1, num2))
+else:
+    print("Invailed the process")
+
+
