@@ -1,0 +1,35 @@
+#Summation of the normal number
+n = int(input("Enter the number:"))
+
+sum = 0
+for i in range(1, n + 1):
+    sum = sum + i
+print("summation of these number:", sum)
+#from the function 
+def summation(n):
+    total = 0
+    for i in range(1, n + 1):
+        total = total + i
+    return total
+print(summation(5))
+
+
+#Summation of the square of the number
+sum1 = 0
+for i in range(1, n + 1):
+    sum1 = sum1 + (i * i)
+print("the summation of the square number:", sum1)
+
+#Summation of the cubic number
+sum2 = 0
+for i in range(1, n + 1):
+    sum2 = sum2 + (i**3)
+print("the cubic summation of these number:", sum2)
+
+m = int(input("Enter the number:")) 
+total = (m * (m + 1))/2
+print("the total summation of these number:", total)
+
+
+
+    
