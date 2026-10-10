@@ -31,3 +31,14 @@ df.to_json("output.json", orient = "records")
 df2_read = pd.read_json("output.json")
 print(df2_read)
 
+
+
+#Inspecting the data
+df = pd.DataFrame(data)
+print(df)
+print(df.info())
+print(df.describe())
+print(df.shape)
+print(df.dtypes)
+print(df.columns)
+
