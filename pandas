@@ -1,0 +1,33 @@
+#series and dataframe
+import pandas as pd
+s = pd.Series([10, 20, 30, 40], index = ["a", "b", "c", "d"])
+print(s)
+print(s["a"])
+print(s[["a", "c"]])
+print(s.values)
+
+
+
+#for 2D table using as a pandas
+data = {
+    "Name": ["Foysal", "Bob", "Forhad", "Hakim"],
+    "Age" : [21, 20, 22, 27],
+    "City": ["Dhaka", "USA", "Chapainawabgonj", "Mirpur"],
+    "salary": [2355, 25343, 3463, 36423]
+
+
+}
+
+print(pd.DataFrame(data))
+df = pd.DataFrame(data)
+print(df)
+df.to_csv("sales.csv", index = False)
+df_read = pd.read_csv("sales.csv")
+print(df_read)
+df.to_excel("distance.xlsx", index = False, sheet_name = "Report")
+df1_read = pd.read_excel("distance.xlsx")
+print(df1_read)
+df.to_json("output.json", orient = "records")
+df2_read = pd.read_json("output.json")
+print(df2_read)
+
