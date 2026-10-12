@@ -1,0 +1,60 @@
+import pandas as pd
+import numpy as np
+
+data = {
+    "Name": [
+        " Rahim ", "Karim", "Nusrat", "Rahim",
+        "Sadia", "  Tanvir", "Mim", "Fahim", "Rafi"
+    ],
+    "Age": [
+        "21", "22", "twenty", "21",
+        None, " 23 ", "20", "150", "24"
+    ],
+    "Department": [
+        "Physics", "physics", "MATHEMATICS", "Physics",
+        " Chemistry ", "PHYSICS", None, "Math", "Physics"
+    ],
+    "CGPA": [
+        "3.50", "3.20", "3.80", "3.50",
+        None, "3.40", "4.50", "3.10", "3.60"
+    ],
+    "Email": [
+        "rahim@example.com",
+        "karim@example.com",
+        "nusrat.example.com",
+        "rahim@example.com",
+        "sadia@example.com",
+        "tanvir@example.com",
+        None,
+        "fahim@example.com",
+        "rafi@example.com"
+    ],
+    "Marks": [
+        "85", "78", "92", "85",
+        "88", None, "95", "65", "105"
+    ]
+}
+
+df = pd.DataFrame(data)
+
+print(df)
+print(df.describe(include="all"))
+print(df.duplicated().sum().sum())
+df["Name"] = df["Name"].str.strip()
+df["Age"] = df["Age"].str.strip()
+df["Department"] = df["Department"].str.strip()
+df["Email"] = df["Email"].str.strip()
+print(df[["Name", "Age", "Department", "Email"]])
+df["Name"] = df["Name"].str.title()
+df["Department"] = df["Department"].str.lower()
+df["Email"] = df["Email"].str.lower()
+print(df[["Name", "Department", "Email"]])
+Department_map = {
+    "physics":"Physics",
+    "math" : "Mathematics",
+    "mathematics": "Mathematics",
+    "chemisty": "Chemisty"
+
+}
+df["Department"] = df["Department"].replace(Department_map)
+print(df["Department"])
