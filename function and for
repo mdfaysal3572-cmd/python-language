@@ -1,0 +1,59 @@
+
+def calculate_sum(n):
+    total = 0
+    for i in range(1, n + 1):
+        total = total + i
+    return total
+print(calculate_sum(10))
+
+
+#even number in function
+def even_number(n):
+    for i in range(2, n + 1, 2):
+        print(i)
+print(even_number(20))
+#odd number in Function
+def odd_number(n):
+    for i in range(1, n + 1, 2):
+        print(i)
+print(odd_number(20))
+
+
+#find the factorial the number
+def factorial(n):
+    fact = 1
+    for i in range(1, n + 1):
+        fact = fact * i
+    return fact
+print(factorial(5))
+
+#greating for my friend
+def great(name):
+    print("Assalamulikum", name)
+great("Foysal")
+#summation of two number
+def add(a, b):
+    return a + b
+print(add(3, 5))
+#find the even number
+def even_number(n):
+    if n % 2 == 0:
+        return "Even number"
+    else:
+        return "Odd number"
+print(even_number(7))   
+
+#square of the number
+def square(n):
+    return n**2
+print(square(5))
+#largest number of the three number
+def largest_number(a, b, c):
+    if a > b and a > c:
+        return a
+    elif b > c and b > a:
+        return b
+    else:
+        return c
+print(largest_number(10, 20, 30))
+    
