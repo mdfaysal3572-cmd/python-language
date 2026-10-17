@@ -1,0 +1,48 @@
+def calculate_total(physics, mathematics, chemistry):
+    return physics + mathematics + chemistry
+def calculate_average(total):
+    return total / 3
+def calculate_grade(average):
+    if average>= 80:
+        return "A+"
+    elif average>= 70:
+        return "A-"
+    elif average>= 60:
+        return "A"
+    elif average >= 50:
+        return "B"
+    elif average>= 40:
+        return "c"
+    else:
+        return "F"
+#asking how many students 
+n = int(input("How many students ?:"))
+students = []
+for i in range(n):
+    print(f"\nEnter the student information")
+    name = input("Enter student name:")
+    physics = float(input("Enter physics marks:"))
+    chemistry = float(input("Enter chemistry marks:"))
+    mathematics = float(input("Enter mathematics marks:"))
+    total = calculate_total(physics, mathematics, chemistry)
+    average = calculate_average(total)
+    grade = calculate_grade(average)
+    #create the dictinary for the students
+    student ={
+        "name" : name,
+        "physics":physics,
+        "mathematics": mathematics,
+        "chemistry" : chemistry,
+        "total": total,
+        "average": average,
+        "grade": grade
+
+    }
+    students.append(student)
+print("\n========== STUDENT RESULTS ==========")
+
+for student in students:
+    print(f"\nname: {student['name']}")
+    print(f"total: {student['total']}")
+    print(f"average: {student['average']:.2f}")
+    print(f"grade: {student['grade']}")
