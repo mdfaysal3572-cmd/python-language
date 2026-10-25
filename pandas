@@ -37,6 +37,32 @@ print(df2_read)
 df = pd.DataFrame(data)
 print(df)
 print(df.info())
+
+#data frame for name , department, marks, Age
+import pandas as pd
+import numpy as np
+data = {
+    "Name": ["Rahim", "Karim", "Sakib", "Nadia", "Riya"],
+    "Department": ["Physics", "Chemistry", "Physics", "Math", "Physics"],
+    "Marks": [85, 72, 90, 65, 78],
+    "Age": [21, 22, 20, 21, 22]
+}
+print(df.to_string(index=False))
+
+print("Average marks:", df["Marks"].mean())
+print("Highest marks:", df["Marks"].max())
+print("Lowest marks:", df["Marks"].min())
+print("Total marks:", df["Marks"].sum())
+print("Median marks:", df["Marks"].median())
+print("Number of students:", df["Name"].count())
+
+print("Average age:", df["Age"].mean())
+print("Hightest Age:", df["Age"].max())
+print("Lowest Age: ", df["Age"].min())
+print("Total Age:", df["Age"].sum())
+print("Median Age:", df["Age"].median())
+
+
 print(df.describe())
 print(df.shape)
 print(df.dtypes)
