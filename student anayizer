@@ -1,0 +1,47 @@
+
+import pandas as pd
+
+data = {
+    "Name": ["Rahim", "Karim", "Sakib", "Nadia", "Riya"],
+    "Physics": [85, 72, 91, 65, 78],
+    "Chemistry": [80, 75, 88, 70, 82],
+    "Mathematics": [90, 68, 95, 75, 85]
+}
+
+df = pd.DataFrame(data)
+
+# Calculate total and average
+subjects = ["Physics", "Chemistry", "Mathematics"]
+df["Total"] = df[subjects].sum(axis=1)
+df["Average"] = df[subjects].mean(axis=1)
+
+# Assign grades
+def calculate_grade(avg):
+    if avg >= 80:
+        return "A+"
+    elif avg >= 70:
+        return "A"
+    elif avg >= 60:
+        return "A-"
+    elif avg >= 50:
+        return "B"
+    elif avg >= 40:
+        return "C"
+    else:
+        return "F"
+
+df["Grade"] = df["Average"].apply(calculate_grade)
+
+# Rank students
+df["Rank"] = df["Total"].rank(
+    ascending=False, method="min"
+).astype(int)
+
+# Display the results
+df = df.sort_values("Rank")
+display(df)
+
+# Print class statistics
+print("Class average:", round(df["Average"].mean(), 2))
+print("Highest average:", df["Average"].max())
+print("Top student:", df.iloc[0]["Name"])
